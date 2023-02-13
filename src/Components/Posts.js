@@ -1,26 +1,45 @@
-import ReactDOM from "react-dom";
-import PostA from "./Post";
-
+import Post from "./Post"
 
 export default function Posts() {
+    const posts = [
+        {
+            userName: "meowed",
+            userImage: "assets/img/meowed.svg",
+            contentImage: "assets/img/gato-telefone.svg",
+            likedByImage: "assets/img/respondeai.svg",
+            likedByText: "respondeai",
+            initialLikesAmount: 101523,
+            saved: true,
+            isLiked: false,
+        },
+        {
+            userName: "barked",
+            userImage: "assets/img/barked.svg",
+            contentImage: "assets/img/dog.svg",
+            likedByImage: "assets/img/adorable_animals.svg",
+            likedByText: "adorable_animals",
+            initialLikesAmount: 200541,
+            saved: false,
+            isLiked: true
+        }
+    ]
+
     return (
         <div className="posts">
-            <PostA 
-            imagemUsuario="assets/img/meowed.svg"
-            nomeUsuario="meowed"
-            imagemConteudo="assets/img/gato-telefone.svg"
-            imagemCurtida="assets/img/respondeai.svg"
-            nomeCurtida="respondeai"
-            quantidadeCurtidas="1000"
-            />
-            <PostA 
-            imagemUsuario="assets/img/meowed.svg"
-            nomeUsuario="meowed"
-            imagemConteudo="assets/img/gato-telefone.svg"
-            imagemCurtida="assets/img/respondeai.svg"
-            nomeCurtida="respondeai"
-            quantidadeCurtidas="1000"
-            />
-  </div>
+            {posts.map(p => (
+                <Post
+                    key={p.userName}
+                    userName={p.userName}
+                    userImage={p.userImage}
+                    contentImage={p.contentImage}
+                    likedByImage={p.likedByImage}
+                    likedByText={p.likedByText}
+                    initialLikesAmount={p.initialLikesAmount}
+                    saved={p.saved}
+                    isLiked={p.isLiked}
+                />
+            ))}
+        </div>
+
     )
 }

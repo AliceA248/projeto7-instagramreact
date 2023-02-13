@@ -1,41 +1,75 @@
-import react from "react"
-import ReactDOM from "react-dom";
+import { useState } from "react"
 
+export default function Post(props) {
+    const { userName, userImage, contentImage, likedByImage, likedByText, initialLikesAmount, saved: isSaved, isLiked,} = props
 
+    const [saved, setSaved] = useState(isSaved)
+    const [liked, setLiked] = useState(isLiked)
+    const [counter, setCounter] = useState(initialLikesAmount)
+    const [animation, setAnimation] = useState(false)
 
-export default function PostA(props) {
+    function clickLike() {
+        if (liked === false) {
+            setCounter(counter + 1)
+        } else {
+            setCounter(counter - 1)
+        }
+        setLiked(!liked)
+    }
+
+    function clickImage(event) {
+        if (event.detail === 2) {
+            setAnimation(true)
+            if (liked === false) {
+                setCounter(counter + 1)
+                setLiked(true)
+            }
+            setTimeout(() => {
+                setAnimation(false)
+            }, 500)
+        }
+    }
+
     return (
-        <div class="post">
-            <div class="topo">
-                <div class="usuario">
-                    <img src={props.imagemUsuario} />
-                    {props.nomeUsuario}
+        <div className="post">
+            <div className="topo">
+                <div className="usuario">
+                    <img src={userImage} />
+                    {userName}
                 </div>
-                <div class="acoes">
+                <div className="acoes">
                     <ion-icon name="ellipsis-horizontal"></ion-icon>
                 </div>
             </div>
 
-            <div class="conteudo">
-                <img src={props.imagemConteudo} />
+            <div className="conteudo">
+                <img onClick={clickImage} src={contentImage} />
             </div>
 
-            <div class="fundo">
-                <div class="acoes">
+            <div className="fundo">
+                <div className="acoes">
                     <div>
-                        <ion-icon name="heart-outline"></ion-icon>
+                        <ion-icon
+                            onClick={clickLike}
+                            name={liked ? "heart" : "heart-outline"}
+                            class={liked ? "liked" : ""}
+                        ></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <ion-icon
+                            onClick={() => setSaved(!saved)}
+                            name={saved ? "bookmark" : "bookmark-outline"}
+                        >
+                        </ion-icon>
                     </div>
                 </div>
 
-                <div class="curtidas">
-                    <img src={props.imagemCurtida} />
-                    <div class="texto">
-                        Curtido por <strong>{props.nomeCurtida}</strong> e <strong>outras {props.quantidadeCurtidas} pessoas</strong>
+                <div className="curtidas">
+                    <img src={likedByImage} />
+                    <div className="texto">
+                        Curtido por <strong>{likedByText}</strong> e <strong>outras {counter} pessoas</strong>
                     </div>
                 </div>
             </div>

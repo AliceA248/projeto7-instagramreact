@@ -108,6 +108,7 @@
     font-size: 12px;
     cursor: pointer;
     margin-right: 10px;
+  
   }
   
   .story .imagem {
@@ -117,6 +118,7 @@
     height: 66px;
     width: 66px;
     background-image: url('../assets/img/story-circle.svg');
+  
     
   }
   
@@ -244,6 +246,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 0 14px;
+    color: #8E8E8E;
   }
   
   .sidebar .sugestoes .sugestao {
@@ -305,4 +308,10 @@
     color: black;
   }
   
-  
+  .usuarioNomwPerfil{
+    
+  }
+
+  .liked {
+    color: red;
+  }

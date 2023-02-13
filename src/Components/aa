@@ -1,0 +1,62 @@
+export default function Stories() {
+    return (
+            <div class="stories">
+                <Story
+                imagemUsuario="assets/img/9gag.svg"
+                nomeUsuario="9gag"
+                />
+                <Story
+                imagemUsuario="assets/img/meowed.svg"
+                nomeUsuario="meowed"
+                />
+                <Story
+                imagemUsuario="assets/img/barked.svg"
+                nomeUsuario="9gag"
+                />
+                <Story
+                imagemUsuario="assets/img/nathanwpylestrangeplanet.svg"
+                nomeUsuario="9gag"
+                />
+                <Story
+                imagemUsuario="assets/img/wawawicomics.svg"
+                nomeUsuario="9gag"
+                />
+                <Story
+                imagemUsuario="assets/img/respondeai.svg"
+                nomeUsuario="9gag"
+                />
+                <Story
+                imagemUsuario="assets/img/filomoderna.svg"
+                nomeUsuario="9gag"
+                />
+                <Story
+                imagemUsuario="assets/img/memeriagourmet.svg"
+                nomeUsuario="9gag"
+                />
+                <div class="setinha">
+                    <ion-icon name="chevron-forward-circle"></ion-icon>
+                </div>
+            </div>
+    )
+}
+
+
+
+
+
+
+const[icone, setIcone] = useState("")
+const[coracao, setCoracao] = useState("")
+
+let iconeCerto =  ! icone ? "bookmark-outline" : `${icone}`
+let coracaoCorreto = ! coracao  ? "heart-outline" : `${coracao}`
+
+function MudarIcone() {
+    const novoIcone = "bookmark"
+    setIcone(novoIcone)
+}
+
+function MudarCoracao() {
+    const novoCoracao = "heart" 
+    setCoracao(novoCoracao)
+}
