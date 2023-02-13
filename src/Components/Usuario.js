@@ -1,23 +1,33 @@
-import { useState } from "react";
+import { useState } from "react"
 import ReactDOM from "react-dom";
 
 export default function Usuario() {
 
     const [nome, setNome] = useState("");
+    const [imagem, setImagem] = useState("assets/img/catanacomics.svg");
 
     let frase = ! nome ? "Catanacomics" : `${nome}`
+    let imagemPerfil = ! imagem ? "assets/img/catanacomics.svg" : `${imagem}`
+
+    function MudarFoto() {
+        const novaFoto = prompt("Qual o link da foto que deseja utilizar como de perfil?")
+        setImagem(novaFoto)
+
+    }
 
     function MudarNome() {
-        const novoNome = prompt("Qual o seu nome")
+        const novoNome = prompt("Qual o seu nome?")
         setNome(novoNome)
     }
     return (
             <div class="usuario">
-                <img src="assets/img/catanacomics.svg" alt="imagem de perfil" />
+                <div data-test="profile-image" onClick={MudarFoto}>
+                <img src = {imagem}/>
+                </div>
                 <div class="texto">
-                    <span className="usuarioNomePerfil" >
+                    <span data-test="name" className="usuarioNomePerfil" >
                         <strong >{frase}</strong>
-                        <ion-icon onClick={MudarNome} name="pencil"></ion-icon>
+                        <ion-icon data-test="edit-name" onClick={MudarNome} name="pencil"></ion-icon>
                     </span>
                 </div>
             </div>

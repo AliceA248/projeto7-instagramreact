@@ -31,10 +31,10 @@ export default function Post(props) {
     }
 
     return (
-        <div className="post">
+        <div data-test="post" className="post">
             <div className="topo">
                 <div className="usuario">
-                    <img src={userImage} />
+                    <img data-test="post-image" src={userImage} />
                     {userName}
                 </div>
                 <div className="acoes">
@@ -49,7 +49,7 @@ export default function Post(props) {
             <div className="fundo">
                 <div className="acoes">
                     <div>
-                        <ion-icon
+                        <ion-icon data-test="like-post"
                             onClick={clickLike}
                             name={liked ? "heart" : "heart-outline"}
                             class={liked ? "liked" : ""}
@@ -58,7 +58,7 @@ export default function Post(props) {
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon
+                        <ion-icon data-test="save-post"
                             onClick={() => setSaved(!saved)}
                             name={saved ? "bookmark" : "bookmark-outline"}
                         >
@@ -68,7 +68,7 @@ export default function Post(props) {
 
                 <div className="curtidas">
                     <img src={likedByImage} />
-                    <div className="texto">
+                    <div data-test="likes-number" className="texto">
                         Curtido por <strong>{likedByText}</strong> e <strong>outras {counter} pessoas</strong>
                     </div>
                 </div>
