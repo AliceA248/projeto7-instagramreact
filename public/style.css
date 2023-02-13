@@ -220,12 +220,14 @@
   .sidebar > .usuario {
     display: flex;
     align-items: center;
+    
   }
   
   .sidebar > .usuario img {
     width: 56px;
     height: 56px;
     border-radius: 50%;
+    cursor: pointer;
   }
   
   .sidebar > .usuario .texto {

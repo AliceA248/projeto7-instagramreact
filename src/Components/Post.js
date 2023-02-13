@@ -43,7 +43,7 @@ export default function Post(props) {
             </div>
 
             <div className="conteudo">
-                <img onClick={clickImage} src={contentImage} />
+                <img data-test="post-image" onClick={clickImage} src={contentImage} />
             </div>
 
             <div className="fundo">
@@ -68,8 +68,8 @@ export default function Post(props) {
 
                 <div className="curtidas">
                     <img src={likedByImage} />
-                    <div data-test="likes-number" className="texto">
-                        Curtido por <strong>{likedByText}</strong> e <strong>outras {counter} pessoas</strong>
+                    <div className="texto">
+                        Curtido por <strong data-test="likes-number" >{likedByText}</strong> e <strong>outras {counter} pessoas</strong>
                     </div>
                 </div>
             </div>
