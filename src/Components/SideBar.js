@@ -15,23 +15,23 @@ export default function Sugestoes() {
 
 
     return (
-        <div class="sidebar">
+        <div className="sidebar">
             <Usuario/>
-            <div class="sugestoes">
-                <div class="titulo">
+            <div className="sugestoes">
+                <div className="titulo">
                     Sugestões para você
                     <div>Ver tudo</div>
                 </div>
                 {sugestaoInfo.map((s) => (
-                    <div class="sugestao">
-                        <div class="usuario">
+                    <div className="sugestao">
+                        <div className="usuario">
                             <img src={s.imagemSugestao} />
-                            <div class="texto">
-                                <div class="nome">{s.nomeSugestao}</div>
-                                <div class="razao">Segue você</div>
+                            <div className="texto">
+                                <div className="nome">{s.nomeSugestao}</div>
+                                <div className="razao">Segue você</div>
                             </div>
                         </div>
-                        <div class="seguir">Seguir</div>
+                        <div className="seguir">Seguir</div>
                     </div>
                 ))}
                 <Links/>

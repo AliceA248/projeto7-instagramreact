@@ -20,7 +20,7 @@ export default function Usuario() {
         setNome(novoNome)
     }
     return (
-            <div class="usuario">
+            <div className="usuario">
                 <div data-test="profile-image" onClick={MudarFoto}>
                 <img data-test="profile-image" src = {imagem}/>
                 </div>

@@ -8,15 +8,6 @@ export default function Post(props) {
     const [counter, setCounter] = useState(initialLikesAmount)
     const [animation, setAnimation] = useState(false)
 
-    function clickLike() {
-        if (liked === false) {
-            setCounter(counter + 1)
-        } else {
-            setCounter(counter - 1)
-        }
-        setLiked(!liked)
-    }
-
     function clickImage(event) {
         if (event.detail === 2) {
             setAnimation(true)
@@ -30,8 +21,19 @@ export default function Post(props) {
         }
     }
 
+
+    
+    function clickLike() {
+        if (liked === false) {
+            setCounter(counter + 1)
+        } else {
+            setCounter(counter - 1)
+        }
+        setLiked(!liked)
+    }
+
     return (
-        <div data-test="post" className="post">
+        <div className="post">
             <div className="topo">
                 <div className="usuario">
                     <img data-test="post-image" src={userImage} />
@@ -58,9 +60,7 @@ export default function Post(props) {
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon data-test="save-post"
-                            onClick={() => setSaved(!saved)}
-                            name={saved ? "bookmark" : "bookmark-outline"}
+                        <ion-icon data-test="save-post"onClick={() => setSaved(!saved)} name={saved ? "bookmark" : "bookmark-outline"}
                         >
                         </ion-icon>
                     </div>

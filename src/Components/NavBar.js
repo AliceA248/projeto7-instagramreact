@@ -3,15 +3,15 @@ import ReactDOM from "react-dom";
 
 export default function NavBar() {
     return (
-        <div class="navbar">
-            <div class="container">
-                <div class="logo">
+        <div className="navbar">
+            <div className="container">
+                <div className="logo">
                     <ion-icon name="logo-instagram"></ion-icon>
-                    <div class="separador"></div>
+                    <div className="separador"></div>
                     <img src="assets/img/logo.png" alt="logo" />
                 </div>
 
-                <div class="pesquisa">
+                <div className="pesquisa">
                     <input type="text" placeholder="Pesquisar" />
                 </div>
 

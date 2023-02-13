@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-family:sans-serif
   }
   
   body {
@@ -117,17 +118,21 @@
     align-items: center;
     height: 66px;
     width: 66px;
-    background-image: url('../assets/img/story-circle.svg');
+    background-image: url("assets/img/story-circle.svg");
+   
   
     
   }
+
   
   .story .imagem img {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-  }
   
+    
+  }
+
   .story .usuario {
     width: 66px;
     overflow: hidden;
@@ -316,4 +321,16 @@
 
   .liked {
     color: red;
+  }
+
+
+  .heart{
+    font-size: 24px;
+
+  } 
+  
+  
+  .heart-outline{
+    font-size: 24px;
+
   }
